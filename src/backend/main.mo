@@ -2,9 +2,6 @@ import Map "mo:core/Map";
 import Text "mo:core/Text";
 import Time "mo:core/Time";
 
-
-
-
 actor {
   // 3 minute cooldown in nanoseconds
   let cooldownTime = 3 * 60 * 1_000_000_000;

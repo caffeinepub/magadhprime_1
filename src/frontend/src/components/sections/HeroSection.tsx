@@ -3,7 +3,6 @@ import { Button } from '@/components/ui/button';
 import { MARKETING_CONFIG } from '../../config/marketing';
 import { useActor } from '../../hooks/useActor';
 import { checkRateLimit } from '../../lib/rateLimit';
-import { getGeneratedAssetUrl } from '../../lib/assetUrl';
 import ImageWithFallback from '../common/ImageWithFallback';
 import { Loader2 } from 'lucide-react';
 
@@ -37,7 +36,7 @@ export default function HeroSection() {
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
         <ImageWithFallback
-          src={getGeneratedAssetUrl('hero-wheat-field.dim_1920x1080.webp')}
+          src="https://i.postimg.cc/rsn7SfgZ/IMG-20260214-021314.jpg"
           alt="Golden wheat field"
           className="w-full h-full object-cover"
           loading="eager"

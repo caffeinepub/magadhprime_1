@@ -2,9 +2,11 @@
   "kind": "feature_evidence_report",
   "features": [
     {
-      "featureId": "feature-place-the-processed-hero-image-asset-in-the-static-assets-folder-so-it-is-served-at-assets-generated-hero-wheat-field-dim-1920x1080-webp-and-loads-via-the-existing-imagewithfallback-path",
-      "featureTitle": "Place the processed Hero image asset in the static assets folder so it is served at /assets/generated/hero-wheat-field.dim_1920x1080.webp and loads via the existing ImageWithFallback path.",
-      "files": [],
+      "featureId": "feature-update-the-home-page-hero-section-background-image-to-load-from-the-external-url-https-i-postimg-cc-rsn7sfgz-img-20260214-021314-jpg-instead-of-the-current-generated-static-asset-while-keeping-the-existing-hero-overlay-gradient-layout-and-imagewithfallback-behavior",
+      "featureTitle": "Update the Home page Hero section background image to load from the external URL \"https://i.postimg.cc/rsn7SfgZ/IMG-20260214-021314.jpg\" (instead of the current generated static asset), while keeping the existing Hero overlay gradient, layout, and ImageWithFallback behavior.",
+      "files": [
+        "frontend/src/components/sections/HeroSection.tsx"
+      ],
       "components": [
         "core-infrastructure@1.0.2",
         "shadcn-ui@1.0.0",
@@ -13,7 +15,7 @@
         "github-export-icp-cli@1.0.0"
       ],
       "testIds": [
-        "REQ-19"
+        "REQ-24"
       ],
       "confidence": "high"
     }

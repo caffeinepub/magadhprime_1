@@ -1,11 +1,11 @@
 # Specification
 
 ## Summary
-**Goal:** Replace the homepage Hero background with the user-uploaded wheat-field image while keeping the rest of the website unchanged.
+**Goal:** Update the Home page Hero background image to load from a specified external URL while preserving the current overlay gradient, layout, and fallback behavior.
 
 **Planned changes:**
-- Process the uploaded wheat-field image into a 1920x1080 optimized WebP and name it `hero-wheat-field.dim_1920x1080.webp`.
-- Place the processed image under `frontend/public/assets/generated/` so it is served at `/assets/generated/hero-wheat-field.dim_1920x1080.webp`.
-- Ensure the homepage Hero continues to load the same referenced filename via the existing `ImageWithFallback` path, with no other UI/copy/behavior changes elsewhere on the site.
+- Change the Hero background image source to `https://i.postimg.cc/rsn7SfgZ/IMG-20260214-021314.jpg` (replacing the current generated static asset reference).
+- Ensure the existing overlay gradient remains applied on top of the Hero background image.
+- Keep the existing `ImageWithFallback` behavior so the fallback UI renders if the external image fails to load.
 
-**User-visible outcome:** The homepage Hero displays the new wheat-field background image, and all other site sections remain exactly the same.
+**User-visible outcome:** The Home page Hero displays the new externally hosted background image with the same dark overlay and layout as before, and shows the existing fallback UI if the image cannot be loaded.

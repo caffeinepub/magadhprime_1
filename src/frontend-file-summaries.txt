@@ -1,12 +1,12 @@
 {
-  "frontend/src/App.tsx": "Main application component that sets up TanStack Router with routes for Home, Privacy Policy, and Terms of Use pages, all wrapped in a shared SiteLayout.",
+  "frontend/src/App.tsx": "Main application component that sets up TanStack Router with base path configuration and routes for Home, Privacy Policy, and Terms of Use pages, all wrapped in a shared SiteLayout.",
   "frontend/src/pages/HomePage.tsx": "Homepage component that composes all main sections (Hero, About, Benefits, Visual Trust, WhatsApp CTA, Support) with SEO meta tags and smooth scroll-to-section functionality.",
   "frontend/src/pages/PrivacyPolicyPage.tsx": "Privacy Policy page with comprehensive, simple English text explaining how customer data is collected and used only for communication and support purposes.",
   "frontend/src/pages/TermsOfUsePage.tsx": "Terms of Use page with clear, straightforward terms covering website usage, product information, orders, intellectual property, and liability.",
   "frontend/src/components/layout/SiteLayout.tsx": "Shared layout wrapper component that provides consistent structure with sticky navbar, main content outlet, and footer across all pages.",
   "frontend/src/components/layout/Navbar.tsx": "Sticky navigation bar with hamburger menu, smooth scroll to sections, and clickable MagadhPrime brand logo that scrolls to hero section or navigates home.",
   "frontend/src/components/layout/Footer.tsx": "Dark grey themed footer with company info, contact details, social links, rate-limited WhatsApp button, embedded Google Map, policy links, and Caffeine.ai attribution.",
-  "frontend/src/components/sections/HeroSection.tsx": "Hero section with wheat field background image using ImageWithFallback component, brand messaging, and WhatsApp CTA button with backend rate-limit checking before opening WhatsApp link.",
+  "frontend/src/components/sections/HeroSection.tsx": "Hero section with external URL background image (https://i.postimg.cc/rsn7SfgZ/IMG-20260214-021314.jpg) using ImageWithFallback component, brand messaging, and WhatsApp CTA button with backend rate-limit checking before opening WhatsApp link.",
   "frontend/src/components/sections/AboutSection.tsx": "About section presenting MagadhPrime's story emphasizing advanced machinery, hygienic processing, and natural nutrition without chemicals or preservatives.",
   "frontend/src/components/sections/BenefitsSection.tsx": "Benefits section displaying four icon cards highlighting organic wheat selection, added bran, no chemicals, and premium quality in a responsive grid layout.",
   "frontend/src/components/sections/VisualTrustSection.tsx": "Visual trust gallery section showcasing six production process images using ImageWithFallback component in a responsive masonry-style grid with graceful error handling.",
@@ -18,9 +18,10 @@
   "frontend/src/hooks/usePageMeta.ts": "Custom React hook for dynamically setting page title and meta description for SEO optimization on each route.",
   "frontend/src/index.css": "Global styles with OKLCH color system defining natural green primary colors, light yellow secondary accents, soft violet backgrounds, dark grey footer, and WhatsApp brand colors for light and dark modes.",
   "frontend/tailwind.config.js": "Tailwind configuration extending the theme with Inter font family, custom color tokens, border radius values, and animation utilities.",
-  "frontend/index.html": "HTML entry point with proper meta tags, viewport settings, SEO-friendly title and description, and Inter font preload for optimal performance.",
+  "frontend/index.html": "HTML entry point with proper meta tags, viewport settings, SEO-friendly title and description, Inter font preload, and base-path-aware script reference for optimal performance.",
   "frontend/src/lib/deviceId.ts": "Utility that generates and persists a stable per-device identifier in localStorage using crypto.randomUUID with fallback for rate-limiting purposes.",
   "frontend/src/lib/rateLimit.ts": "Frontend rate-limiting helper that uses backend actor to perform fail-closed checks for WhatsApp and support actions with proper error handling.",
-  "frontend/src/lib/assetUrl.ts": "Helper utility functions to build correct static asset URLs for files under frontend/public, ensuring proper resolution in both development and production environments.",
-  "frontend/src/components/common/ImageWithFallback.tsx": "Reusable image wrapper component that displays a clean gradient placeholder with an icon when an image fails to load, preserving layout and preventing broken image UI."
+  "frontend/src/lib/assetUrl.ts": "Helper utility functions that build correct static asset URLs using Vite's BASE_URL environment variable, ensuring proper resolution in both development and production environments including non-root base paths.",
+  "frontend/src/components/common/ImageWithFallback.tsx": "Reusable image wrapper component that displays a clean gradient placeholder when an image fails to load, with loading state constrained within image bounds and proper state reset on src changes.",
+  "frontend/public/assets/generated/hero-wheat-field.dim_1920x1080.webp": "WebP hero background image showing a golden wheat field under blue sky with clouds, converted from the uploaded photo and optimized to 1920x1080 dimensions for the HeroSection component."
 }

@@ -1,6 +1,6 @@
 {
   "schemaVersion": "1.0.0",
-  "projectStateVersion": 9,
+  "projectStateVersion": 19,
   "summary": "Build a modern, professional, mobile-first marketing website for the MagadhPrime wheat flour brand (powered by MAGADH FLOUR MILL) with premium natural styling, fast performance, SEO-friendly structure, WhatsApp ordering CTA, custom support form integrated with Google Forms/Sheets, policy pages, and a visual trust section using AI-generated photorealistic images (no stock photos).",
   "architectural_notes": [
     "Mobile-first responsive layout; prioritize performance and fast loading (target <3s).",
@@ -8,11 +8,13 @@
     "SEO-friendly semantic structure.",
     "Strict copy rule: never mention stone grinding or chakki process; only 'Advanced Milling Machinery'/'Modern Processing'.",
     "Color theme: natural greens primary, light yellow gradient secondary, soft light violet background blend, dark grey footer.",
-    "Implement basic abuse protection (e.g., IP-based rate limiting/cooldown ~2–3 minutes) for user-triggered contact/WhatsApp/support actions."
+    "Implement basic abuse protection (e.g., IP-based rate limiting/cooldown ~2–3 minutes) for user-triggered contact/WhatsApp/support actions.",
+    "Hero background image source may be an external URL; ensure it loads reliably in production (HTTPS, CORS-safe) and has a fallback if the remote asset is unavailable."
   ],
-  "known_issues": [],
+  "known_issues": [
+    "Hero background image is not visible on the live site; appears stuck loading (likely static asset path/serving or missing/cached asset)."
+  ],
   "isFixRequest": false,
-  "imageRequirements": "## Edit Images\n- Use the uploaded wheat-field image as the Hero background and export as WebP at 1920x1080 (IMG_20260214_021314.png > hero-wheat-field.dim_1920x1080.webp)",
   "existing_features": [
     {
       "id": "feature-build-a-modern-professional-mobile-first-marketing-website-for-the-brand-magadhprime-powered-by-magadh-flour-mill-with-a-clean-premium-natural-aesthetic-smooth-scrolling-minimal-animations-and-fast-loading",
@@ -157,6 +159,38 @@
         "REQ-19"
       ],
       "version": 1
+    },
+    {
+      "id": "feature-replace-the-homepage-hero-background-image-with-the-user-uploaded-photo-by-processing-it-into-a-webp-asset-that-matches-the-exact-filename-currently-referenced-by-the-hero-section-hero-wheat-field-dim-1920x1080-webp-and-placing-it-under-frontend-public-assets-generated-so-it-is-served-at-assets-generated-hero-wheat-field-dim-1920x1080-webp",
+      "title": "Replace the homepage Hero background image with the user-uploaded photo by processing it into a WebP asset that matches the exact filename currently referenced by the Hero section (`hero-wheat-field.dim_1920x1080.webp`) and placing it under `frontend/public/assets/generated/` so it is served at `/assets/generated/hero-wheat-field.dim_1920x1080.webp`.",
+      "reqIds": [
+        "REQ-20"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-fix-production-static-asset-url-generation-so-images-under-frontend-public-especially-assets-generated-hero-wheat-field-dim-1920x1080-webp-and-the-visual-trust-images-resolve-correctly-on-the-live-site-including-when-the-app-is-served-from-a-non-root-base-path",
+      "title": "Fix production static asset URL generation so images under `frontend/public` (especially `/assets/generated/hero-wheat-field.dim_1920x1080.webp` and the Visual Trust images) resolve correctly on the live site, including when the app is served from a non-root base path.",
+      "reqIds": [
+        "REQ-21"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-harden-imagewithfallback-loading-behavior-so-the-loading-placeholder-is-correctly-positioned-and-cannot-obscure-the-page-due-to-missing-relative-positioning-and-ensure-the-component-reliably-transitions-out-of-the-loading-state-when-the-image-loads-or-fails",
+      "title": "Harden `ImageWithFallback` loading behavior so the loading placeholder is correctly positioned and cannot obscure the page due to missing relative positioning, and ensure the component reliably transitions out of the loading state when the image loads or fails.",
+      "reqIds": [
+        "REQ-22"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-update-the-home-page-hero-section-background-image-to-load-from-the-external-url-https-i-postimg-cc-rsn7sfgz-img-20260214-021314-jpg-instead-of-the-current-generated-static-asset-while-keeping-the-existing-hero-overlay-gradient-layout-and-imagewithfallback-behavior",
+      "title": "Update the Home page Hero section background image to load from the external URL \"https://i.postimg.cc/rsn7SfgZ/IMG-20260214-021314.jpg\" (instead of the current generated static asset), while keeping the existing Hero overlay gradient, layout, and ImageWithFallback behavior.",
+      "reqIds": [
+        "REQ-24"
+      ],
+      "version": 1
     }
   ],
   "new_feature_requests": [
@@ -252,10 +286,22 @@
     },
     {
       "id": "AR-16",
-      "summary": "Update the homepage Hero background image to use the user-uploaded wheat-field image while keeping the rest of the website design, layout, copy, and behavior unchanged.",
+      "summary": "Update the homepage Hero section background to use the user-provided image (replace current hero background asset and ensure it renders correctly in production)",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-19",
+      "summary": "Ensure the hero background asset file exists in the deployed frontend build at `frontend/public/assets/generated/hero-wheat-field.dim_1920x1080.webp` with the exact filename/casing used by `HeroSection`, and that it is included in the final deployed assets bundle.",
       "reqIds": [
-        "REQ-18"
+        "REQ-23"
       ],
+      "status": "pending"
+    },
+    {
+      "id": "AR-20",
+      "summary": "Update the homepage Hero background to use the provided external image URL (https://i.postimg.cc/rsn7SfgZ/IMG-20260214-021314.jpg)",
+      "reqIds": [],
       "status": "pending"
     }
   ],

@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 interface ImageWithFallbackProps {
   src: string;
@@ -10,7 +10,7 @@ interface ImageWithFallbackProps {
 
 /**
  * Image component that displays a clean gradient placeholder when the image fails to load.
- * Preserves layout and prevents broken image icons.
+ * Preserves layout and prevents broken image icons. Loading state is constrained within the image bounds.
  */
 export default function ImageWithFallback({
   src,
@@ -21,6 +21,12 @@ export default function ImageWithFallback({
 }: ImageWithFallbackProps) {
   const [hasError, setHasError] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
+
+  // Reset loading/error state when src changes
+  useEffect(() => {
+    setHasError(false);
+    setIsLoading(true);
+  }, [src]);
 
   const handleError = () => {
     setHasError(true);
@@ -58,7 +64,7 @@ export default function ImageWithFallback({
   }
 
   return (
-    <>
+    <div className="relative w-full h-full">
       {isLoading && (
         <div
           className={`absolute inset-0 bg-gradient-to-br from-muted via-muted/80 to-muted/60 animate-pulse ${fallbackClassName}`}
@@ -72,6 +78,6 @@ export default function ImageWithFallback({
         onError={handleError}
         onLoad={handleLoad}
       />
-    </>
+    </div>
   );
 }

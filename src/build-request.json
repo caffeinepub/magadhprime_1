@@ -1,60 +1,39 @@
 {
   "kind": "build_request",
-  "title": "Replace Hero background with uploaded image (keep site unchanged)",
+  "title": "Use provided external URL for Hero background image",
   "priority": "normal",
   "requirements": [
     {
-      "id": "REQ-18",
-      "text": "Update the homepage Hero background image to use the user-uploaded wheat-field image while keeping the rest of the website design, layout, copy, and behavior unchanged.",
+      "id": "REQ-24",
+      "text": "Update the Home page Hero section background image to load from the external URL \"https://i.postimg.cc/rsn7SfgZ/IMG-20260214-021314.jpg\" (instead of the current generated static asset), while keeping the existing Hero overlay gradient, layout, and ImageWithFallback behavior.",
       "target": "frontend",
       "source": {
         "messageIds": [
-          "msg-1"
+          "msg-4"
         ],
         "quotes": [
-          "Placed the image in hero image. Make same website. All are perfect"
+          "Put the new hero image background with \"https://i.postimg.cc/rsn7SfgZ/IMG-20260214-021314.jpg\" with this url"
         ]
       },
       "acceptanceCriteria": [
-        "The Hero section continues to reference the generated asset filename hero-wheat-field.dim_1920x1080.webp.",
-        "The Hero background visually matches the uploaded wheat-field image (same scene/composition) and renders correctly on the live site.",
-        "No other sections (Navbar, About, Benefits, Visual Trust, WhatsApp CTA, Support, Footer, Privacy/Terms) have any design/copy/behavior changes."
-      ]
-    },
-    {
-      "id": "REQ-19",
-      "text": "Place the processed Hero image asset in the static assets folder so it is served at /assets/generated/hero-wheat-field.dim_1920x1080.webp and loads via the existing ImageWithFallback path.",
-      "target": "frontend",
-      "source": {
-        "messageIds": [
-          "msg-1"
-        ],
-        "quotes": [
-          "Placed the image in hero image. Make same website. All are perfect"
-        ]
-      },
-      "acceptanceCriteria": [
-        "A WebP file named hero-wheat-field.dim_1920x1080.webp exists under frontend/public/assets/generated/.",
-        "Loading the homepage successfully displays the Hero image (no fallback placeholder) in both local dev and production builds.",
-        "The image uses the correct dimensions (1920x1080) and is optimized as WebP."
+        "The Hero background image request uses exactly https://i.postimg.cc/rsn7SfgZ/IMG-20260214-021314.jpg as the image src.",
+        "The Hero section overlay gradient (darkening layer) remains applied on top of the background image.",
+        "If the external image fails to load, the existing ImageWithFallback placeholder/fallback UI renders instead of a broken image.",
+        "No other sections (Visual Trust, About, Benefits, Support, Footer) have their images changed as part of this update."
       ]
     }
   ],
   "constraints": [
-    "Do not change any user-facing text; keep English copy exactly as currently implemented.",
-    "Do not modify any files under frontend/src/components/ui or other immutablePaths listed in SYSTEM_CONTEXT.",
-    "Keep existing filenames referenced in code (do not rename hero-wheat-field.dim_1920x1080.webp)."
+    "Do not modify any files under frontend/src/components/ui or other frontend immutablePaths.",
+    "Keep the backend (Motoko single-actor) unchanged for this request."
   ],
   "nonGoals": [
-    "Redesigning the website theme, colors, typography, layout, or animations.",
-    "Changing WhatsApp rate limiting, Google Forms integration, or any backend logic.",
-    "Changing Visual Trust images or any other existing generated assets."
+    "Do not download/process the external image into a local WebP asset unless explicitly requested.",
+    "Do not change WhatsApp CTA behavior, rate limiting logic, or marketing copy as part of this change."
   ],
   "imageRequirements": {
     "required": [],
-    "edits": [
-      "Use the uploaded wheat-field image as the Hero background and export as WebP at 1920x1080 (IMG_20260214_021314.png > hero-wheat-field.dim_1920x1080.webp)"
-    ]
+    "edits": []
   },
   "userProfileUpdate": {
     "goalsToAdd": [],

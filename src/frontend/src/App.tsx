@@ -28,7 +28,11 @@ const termsRoute = createRoute({
 
 const routeTree = rootRoute.addChildren([indexRoute, privacyRoute, termsRoute]);
 
-const router = createRouter({ routeTree });
+// Configure router with base path from build environment
+const router = createRouter({ 
+  routeTree,
+  basepath: import.meta.env.BASE_URL || '/',
+});
 
 declare module '@tanstack/react-router' {
   interface Register {
