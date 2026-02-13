@@ -3,8 +3,9 @@ import ImageWithFallback from '../common/ImageWithFallback';
 
 const images = [
   {
-    filename: 'trust-modern-milling-machinery.dim_1600x1067.webp',
+    src: 'https://i.postimg.cc/DfNT4zDB/IMG-20260214-041839.png',
     alt: 'Modern flour mill machinery in operation',
+    isExternal: true,
   },
   {
     filename: 'trust-farmers-harvest.dim_1600x1067.webp',
@@ -39,20 +40,26 @@ export default function VisualTrustSection() {
           From field to flour, we maintain the highest standards of quality and hygiene using modern processing technology.
         </p>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
-          {images.map((image, index) => (
-            <div
-              key={index}
-              className="relative overflow-hidden rounded-lg shadow-md hover:shadow-xl transition-shadow aspect-[3/2]"
-            >
-              <ImageWithFallback
-                src={getGeneratedAssetUrl(image.filename)}
-                alt={image.alt}
-                loading="lazy"
-                className="w-full h-full object-cover"
-                fallbackClassName="w-full h-full"
-              />
-            </div>
-          ))}
+          {images.map((image, index) => {
+            const imageSrc = 'isExternal' in image && image.isExternal
+              ? image.src
+              : getGeneratedAssetUrl(image.filename!);
+            
+            return (
+              <div
+                key={index}
+                className="relative overflow-hidden rounded-lg shadow-md hover:shadow-xl transition-shadow aspect-[3/2]"
+              >
+                <ImageWithFallback
+                  src={imageSrc}
+                  alt={image.alt}
+                  loading="lazy"
+                  className="w-full h-full object-cover"
+                  fallbackClassName="w-full h-full"
+                />
+              </div>
+            );
+          })}
         </div>
       </div>
     </section>

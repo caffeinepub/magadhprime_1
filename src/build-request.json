@@ -1,35 +1,35 @@
 {
   "kind": "build_request",
-  "title": "Use provided external URL for Hero background image",
+  "title": "Update Visual Trust first image to use provided external URL",
   "priority": "normal",
   "requirements": [
     {
-      "id": "REQ-24",
-      "text": "Update the Home page Hero section background image to load from the external URL \"https://i.postimg.cc/rsn7SfgZ/IMG-20260214-021314.jpg\" (instead of the current generated static asset), while keeping the existing Hero overlay gradient, layout, and ImageWithFallback behavior.",
+      "id": "REQ-25",
+      "text": "Update the Visual Trust section so that the first image in the grid loads from the external URL \"https://i.postimg.cc/DfNT4zDB/IMG-20260214-041839.png\" instead of the current generated asset filename, while keeping all other Visual Trust images unchanged and preserving the existing layout and ImageWithFallback behavior.",
       "target": "frontend",
       "source": {
         "messageIds": [
           "msg-4"
         ],
         "quotes": [
-          "Put the new hero image background with \"https://i.postimg.cc/rsn7SfgZ/IMG-20260214-021314.jpg\" with this url"
+          "Replace the url in visual trust section of first image.\n1. https://i.postimg.cc/DfNT4zDB/IMG-20260214-041839.png"
         ]
       },
       "acceptanceCriteria": [
-        "The Hero background image request uses exactly https://i.postimg.cc/rsn7SfgZ/IMG-20260214-021314.jpg as the image src.",
-        "The Hero section overlay gradient (darkening layer) remains applied on top of the background image.",
-        "If the external image fails to load, the existing ImageWithFallback placeholder/fallback UI renders instead of a broken image.",
-        "No other sections (Visual Trust, About, Benefits, Support, Footer) have their images changed as part of this update."
+        "In frontend/src/components/sections/VisualTrustSection.tsx, the first Visual Trust image renders using src=\"https://i.postimg.cc/DfNT4zDB/IMG-20260214-041839.png\" (not passed through getGeneratedAssetUrl).",
+        "All other Visual Trust images continue to load from their existing generated asset filenames via getGeneratedAssetUrl.",
+        "The Visual Trust grid layout, aspect ratio, hover effects, and ImageWithFallback loading/fallback UI remain unchanged.",
+        "The change does not affect the Hero section image behavior or any other site images."
       ]
     }
   ],
   "constraints": [
-    "Do not modify any files under frontend/src/components/ui or other frontend immutablePaths.",
-    "Keep the backend (Motoko single-actor) unchanged for this request."
+    "Frontend immutable paths must not be edited (including frontend/src/hooks/useInternetIdentity.ts, frontend/src/hooks/useActor.ts, frontend/src/main.tsx, and frontend/src/components/ui).",
+    "Keep the existing Visual Trust section styling and structure; only change the first image source URL as requested."
   ],
   "nonGoals": [
-    "Do not download/process the external image into a local WebP asset unless explicitly requested.",
-    "Do not change WhatsApp CTA behavior, rate limiting logic, or marketing copy as part of this change."
+    "Do not regenerate or modify any existing generated WebP assets for the Visual Trust section.",
+    "Do not change any other Visual Trust image URLs/filenames or alt text beyond what is required to update the first image source."
   ],
   "imageRequirements": {
     "required": [],

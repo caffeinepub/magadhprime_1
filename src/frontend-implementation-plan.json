@@ -1,22 +1,22 @@
 {
   "kind": "implementation_plan",
   "version": "1.0",
-  "title": "Use external URL for Home Hero background image",
+  "title": "Visual Trust: switch first grid image to external URL",
   "requirements": [
     {
-      "id": "REQ-24",
-      "summary": "Switch the Home page Hero background image from the generated static asset to the provided external URL while preserving the overlay gradient, layout, and ImageWithFallback behavior.",
+      "id": "REQ-25",
+      "summary": "Update Visual Trust section so the first grid image uses the provided external URL while keeping all other images, layout, and ImageWithFallback behavior unchanged.",
       "acceptanceCriteria": [
-        "The Hero background image request uses exactly https://i.postimg.cc/rsn7SfgZ/IMG-20260214-021314.jpg as the image src.",
-        "The Hero section overlay gradient (darkening layer) remains applied on top of the background image.",
-        "If the external image fails to load, the existing ImageWithFallback placeholder/fallback UI renders instead of a broken image.",
-        "No other sections (Visual Trust, About, Benefits, Support, Footer) have their images changed as part of this update."
+        "In frontend/src/components/sections/VisualTrustSection.tsx, the first Visual Trust image renders using src=\"https://i.postimg.cc/DfNT4zDB/IMG-20260214-041839.png\" (not passed through getGeneratedAssetUrl).",
+        "All other Visual Trust images continue to load from their existing generated asset filenames via getGeneratedAssetUrl.",
+        "The Visual Trust grid layout, aspect ratio, hover effects, and ImageWithFallback loading/fallback UI remain unchanged.",
+        "The change does not affect the Hero section image behavior or any other site images."
       ],
       "file_operations": [
         {
-          "path": "frontend/src/components/sections/HeroSection.tsx",
+          "path": "frontend/src/components/sections/VisualTrustSection.tsx",
           "operation": "modify",
-          "description": "Update the Hero background ImageWithFallback src to use exactly \"https://i.postimg.cc/rsn7SfgZ/IMG-20260214-021314.jpg\" instead of getGeneratedAssetUrl(...). Keep the existing overlay gradient layer, layout classes, and ImageWithFallback usage so the same placeholder/fallback UI appears on load/error. Remove the now-unused getGeneratedAssetUrl import to keep the file clean."
+          "description": "Adjust the Visual Trust images list/rendering so the first item uses the external URL \"https://i.postimg.cc/DfNT4zDB/IMG-20260214-041839.png\" directly (bypassing getGeneratedAssetUrl), while all remaining items continue to use their current generated asset filenames via getGeneratedAssetUrl; preserve existing markup, styling classes, aspect ratio container, hover effects, and ImageWithFallback props/behavior."
         }
       ]
     }

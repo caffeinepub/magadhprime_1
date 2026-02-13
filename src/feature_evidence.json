@@ -2,10 +2,10 @@
   "kind": "feature_evidence_report",
   "features": [
     {
-      "featureId": "feature-update-the-home-page-hero-section-background-image-to-load-from-the-external-url-https-i-postimg-cc-rsn7sfgz-img-20260214-021314-jpg-instead-of-the-current-generated-static-asset-while-keeping-the-existing-hero-overlay-gradient-layout-and-imagewithfallback-behavior",
-      "featureTitle": "Update the Home page Hero section background image to load from the external URL \"https://i.postimg.cc/rsn7SfgZ/IMG-20260214-021314.jpg\" (instead of the current generated static asset), while keeping the existing Hero overlay gradient, layout, and ImageWithFallback behavior.",
+      "featureId": "feature-update-the-visual-trust-section-so-that-the-first-image-in-the-grid-loads-from-the-external-url-https-i-postimg-cc-dfnt4zdb-img-20260214-041839-png-instead-of-the-current-generated-asset-filename-while-keeping-all-other-visual-trust-images-unchanged-and-preserving-the-existing-layout-and-imagewithfallback-behavior",
+      "featureTitle": "Update the Visual Trust section so that the first image in the grid loads from the external URL \"https://i.postimg.cc/DfNT4zDB/IMG-20260214-041839.png\" instead of the current generated asset filename, while keeping all other Visual Trust images unchanged and preserving the existing layout and ImageWithFallback behavior.",
       "files": [
-        "frontend/src/components/sections/HeroSection.tsx"
+        "frontend/src/components/sections/VisualTrustSection.tsx"
       ],
       "components": [
         "core-infrastructure@1.0.2",
@@ -15,7 +15,7 @@
         "github-export-icp-cli@1.0.0"
       ],
       "testIds": [
-        "REQ-24"
+        "REQ-25"
       ],
       "confidence": "high"
     }

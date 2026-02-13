@@ -1,11 +1,10 @@
 # Specification
 
 ## Summary
-**Goal:** Update the Home page Hero background image to load from a specified external URL while preserving the current overlay gradient, layout, and fallback behavior.
+**Goal:** Update the first image in the Visual Trust grid to load from a provided external URL while keeping the rest of the section unchanged.
 
 **Planned changes:**
-- Change the Hero background image source to `https://i.postimg.cc/rsn7SfgZ/IMG-20260214-021314.jpg` (replacing the current generated static asset reference).
-- Ensure the existing overlay gradient remains applied on top of the Hero background image.
-- Keep the existing `ImageWithFallback` behavior so the fallback UI renders if the external image fails to load.
+- In `frontend/src/components/sections/VisualTrustSection.tsx`, set the first Visual Trust image `src` to `https://i.postimg.cc/DfNT4zDB/IMG-20260214-041839.png` (not using `getGeneratedAssetUrl`).
+- Keep all other Visual Trust images, layout/styling, and `ImageWithFallback` behavior exactly as-is.
 
-**User-visible outcome:** The Home page Hero displays the new externally hosted background image with the same dark overlay and layout as before, and shows the existing fallback UI if the image cannot be loaded.
+**User-visible outcome:** The first Visual Trust image displays from the external URL, with no visible changes to the grid layout or other images.

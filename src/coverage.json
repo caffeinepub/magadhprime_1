@@ -1,7 +1,7 @@
 {
   "kind": "coverage_report",
   "version": "1.0",
-  "generatedAt": "2026-02-13T22:41:56.082Z",
+  "generatedAt": "2026-02-13T23:00:05.917Z",
   "sources": {
     "buildRequest": true,
     "implementationPlan": true
@@ -11,14 +11,14 @@
     "implemented": 1,
     "items": [
       {
-        "id": "REQ-24",
-        "summary": "Update the Home page Hero section background image to load from the external URL \"https://i.postimg.cc/rsn7SfgZ/IMG-20260214-021314.jpg\" (instead of the current generated static asset), while keeping the existing Hero overlay gradient, layout, and ImageWithFallback behavior.",
+        "id": "REQ-25",
+        "summary": "Update the Visual Trust section so that the first image in the grid loads from the external URL \"https://i.postimg.cc/DfNT4zDB/IMG-20260214-041839.png\" instead of the current generated asset filename, while keeping all other Visual Trust images unchanged and preserving the existing layout and ImageWithFallback behavior.",
         "status": "implemented",
         "plannedFiles": [
-          "frontend/src/components/sections/HeroSection.tsx"
+          "frontend/src/components/sections/VisualTrustSection.tsx"
         ],
         "matchedFiles": [
-          "frontend/src/components/sections/HeroSection.tsx"
+          "frontend/src/components/sections/VisualTrustSection.tsx"
         ]
       }
     ]
@@ -28,7 +28,7 @@
     "feature_evidence.json",
     "frontend-file-summaries.txt",
     "frontend-implementation-plan.json",
-    "frontend/src/components/sections/HeroSection.tsx",
+    "frontend/src/components/sections/VisualTrustSection.tsx",
     "project_state.json",
     "scratch/component-selection.json",
     "spec.md",
