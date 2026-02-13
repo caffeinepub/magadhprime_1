@@ -1,0 +1,144 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    :root {
+        --radius: 0.5rem;
+        
+        /* Natural Green Primary */
+        --background: 0.98 0.01 140;
+        --foreground: 0.25 0.02 140;
+        --card: 1 0 0;
+        --card-foreground: 0.25 0.02 140;
+        --popover: 1 0 0;
+        --popover-foreground: 0.25 0.02 140;
+        --primary: 0.55 0.15 145;
+        --primary-foreground: 0.99 0 0;
+        --secondary: 0.92 0.08 85;
+        --secondary-foreground: 0.35 0.05 85;
+        --muted: 0.94 0.01 140;
+        --muted-foreground: 0.50 0.02 140;
+        --accent: 0.92 0.08 85;
+        --accent-foreground: 0.35 0.05 85;
+        --destructive: 0.55 0.22 25;
+        --destructive-foreground: 0.99 0 0;
+        --border: 0.88 0.02 140;
+        --input: 0.88 0.02 140;
+        --ring: 0.55 0.15 145;
+        
+        /* Custom colors for MagadhPrime */
+        --about-bg: 0.96 0.03 280;
+        --cta-gradient: 0.95 0.05 85;
+        --footer-dark: 0.25 0 0;
+        --footer-light: 0.95 0 0;
+        --footer-muted: 0.70 0 0;
+        --footer-border: 0.35 0 0;
+        --whatsapp: 0.50 0.12 145;
+        --whatsapp-dark: 0.42 0.14 145;
+        --success: 0.55 0.15 145;
+        --success-light: 0.95 0.05 145;
+        --success-dark: 0.35 0.12 145;
+    }
+
+    .dark {
+        --background: 0.20 0.01 140;
+        --foreground: 0.95 0.01 140;
+        --card: 0.25 0.01 140;
+        --card-foreground: 0.95 0.01 140;
+        --popover: 0.25 0.01 140;
+        --popover-foreground: 0.95 0.01 140;
+        --primary: 0.65 0.15 145;
+        --primary-foreground: 0.15 0.02 145;
+        --secondary: 0.30 0.02 140;
+        --secondary-foreground: 0.95 0.01 140;
+        --muted: 0.30 0.01 140;
+        --muted-foreground: 0.65 0.01 140;
+        --accent: 0.35 0.05 85;
+        --accent-foreground: 0.95 0.01 140;
+        --destructive: 0.60 0.22 25;
+        --destructive-foreground: 0.95 0 0;
+        --border: 0.35 0.01 140;
+        --input: 0.35 0.01 140;
+        --ring: 0.65 0.15 145;
+        
+        --about-bg: 0.23 0.01 280;
+        --cta-gradient: 0.28 0.03 85;
+        --footer-dark: 0.18 0 0;
+        --footer-light: 0.95 0 0;
+        --footer-muted: 0.65 0 0;
+        --footer-border: 0.30 0 0;
+    }
+
+    * {
+        @apply border-border;
+    }
+    
+    body {
+        @apply bg-background text-foreground;
+        font-feature-settings: "rlig" 1, "calt" 1;
+    }
+    
+    html {
+        scroll-behavior: smooth;
+    }
+    
+    @media (prefers-reduced-motion: reduce) {
+        html {
+            scroll-behavior: auto;
+        }
+    }
+}
+
+@layer utilities {
+    .bg-about-bg {
+        background-color: oklch(var(--about-bg));
+    }
+    
+    .bg-cta-gradient {
+        background: linear-gradient(135deg, 
+            oklch(var(--cta-gradient)) 0%, 
+            oklch(var(--about-bg)) 100%
+        );
+    }
+    
+    .bg-footer-dark {
+        background-color: oklch(var(--footer-dark));
+    }
+    
+    .text-footer-light {
+        color: oklch(var(--footer-light));
+    }
+    
+    .text-footer-muted {
+        color: oklch(var(--footer-muted));
+    }
+    
+    .border-footer-border {
+        border-color: oklch(var(--footer-border));
+    }
+    
+    .bg-whatsapp {
+        background-color: oklch(var(--whatsapp));
+    }
+    
+    .bg-whatsapp-dark {
+        background-color: oklch(var(--whatsapp-dark));
+    }
+    
+    .text-success {
+        color: oklch(var(--success));
+    }
+    
+    .bg-success-light {
+        background-color: oklch(var(--success-light));
+    }
+    
+    .text-success-dark {
+        color: oklch(var(--success-dark));
+    }
+    
+    .border-success {
+        border-color: oklch(var(--success));
+    }
+}

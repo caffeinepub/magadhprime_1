@@ -1,0 +1,266 @@
+{
+  "schemaVersion": "1.0.0",
+  "projectStateVersion": 9,
+  "summary": "Build a modern, professional, mobile-first marketing website for the MagadhPrime wheat flour brand (powered by MAGADH FLOUR MILL) with premium natural styling, fast performance, SEO-friendly structure, WhatsApp ordering CTA, custom support form integrated with Google Forms/Sheets, policy pages, and a visual trust section using AI-generated photorealistic images (no stock photos).",
+  "architectural_notes": [
+    "Mobile-first responsive layout; prioritize performance and fast loading (target <3s).",
+    "Use optimized images (prefer WebP) and lightweight assets; avoid unnecessary libraries.",
+    "SEO-friendly semantic structure.",
+    "Strict copy rule: never mention stone grinding or chakki process; only 'Advanced Milling Machinery'/'Modern Processing'.",
+    "Color theme: natural greens primary, light yellow gradient secondary, soft light violet background blend, dark grey footer.",
+    "Implement basic abuse protection (e.g., IP-based rate limiting/cooldown ~2–3 minutes) for user-triggered contact/WhatsApp/support actions."
+  ],
+  "known_issues": [],
+  "isFixRequest": false,
+  "imageRequirements": "## Edit Images\n- Use the uploaded wheat-field image as the Hero background and export as WebP at 1920x1080 (IMG_20260214_021314.png > hero-wheat-field.dim_1920x1080.webp)",
+  "existing_features": [
+    {
+      "id": "feature-build-a-modern-professional-mobile-first-marketing-website-for-the-brand-magadhprime-powered-by-magadh-flour-mill-with-a-clean-premium-natural-aesthetic-smooth-scrolling-minimal-animations-and-fast-loading",
+      "title": "Build a modern, professional, mobile-first marketing website for the brand “MagadhPrime” (powered by “MAGADH FLOUR MILL”) with a clean premium natural aesthetic, smooth scrolling, minimal animations, and fast loading.",
+      "reqIds": [
+        "REQ-1"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-implement-a-sticky-mobile-navigation-with-a-hamburger-menu-containing-home-about-support-with-smooth-scroll-to-corresponding-sections-on-the-homepage-and-correct-navigation-behavior-when-on-other-pages-like-privacy-terms",
+      "title": "Implement a sticky mobile navigation with a hamburger menu containing: Home | About | Support, with smooth scroll to corresponding sections on the homepage (and correct navigation behavior when on other pages like Privacy/Terms).",
+      "reqIds": [
+        "REQ-2"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-create-the-homepage-hero-section-using-a-high-quality-wheat-field-image-with-text-overlay-magadhprime-premium-quality-wheat-flour-powered-by-magadh-flour-mill-plus-the-trust-line-processed-with-advanced-milling-technology-to-deliver-purity-nutrition-and-consistency-include-a-prominent-order-on-whatsapp-button",
+      "title": "Create the homepage Hero section using a high-quality wheat field image with text overlay: “MagadhPrime”, “Premium Quality Wheat Flour”, “Powered by MAGADH FLOUR MILL”, plus the trust line “Processed with advanced milling technology to deliver purity, nutrition, and consistency.” Include a prominent “Order on WhatsApp” button.",
+      "reqIds": [
+        "REQ-3"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-create-an-about-section-with-the-provided-copy-emphasizing-advanced-modern-automated-machinery-hygienic-processing-consistent-texture-responsible-sourcing-and-no-chemicals-preservatives-ensure-no-mention-of-stone-grinding-or-chakki-processing-anywhere-on-the-site",
+      "title": "Create an About section with the provided copy, emphasizing advanced/modern automated machinery, hygienic processing, consistent texture, responsible sourcing, and no chemicals/preservatives; ensure no mention of stone grinding or chakki processing anywhere on the site.",
+      "reqIds": [
+        "REQ-4"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-implement-a-benefits-section-with-four-modern-icon-cards-clean-minimal-icons-and-card-layout-1-organic-wheat-selection-2-added-bran-chokar-rich-in-fiber-3-no-chemicals-or-preservatives-added-4-premium-quality-hygiene",
+      "title": "Implement a Benefits section with four modern icon cards (clean, minimal icons and card layout): (1) Organic Wheat Selection (2) Added Bran (Chokar) – Rich in Fiber (3) No Chemicals or Preservatives Added (4) Premium Quality & Hygiene.",
+      "reqIds": [
+        "REQ-5"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-a-visual-trust-section-that-uses-only-custom-ai-generated-photorealistic-images-no-stock-photos-matching-the-specified-style-requirements-warm-natural-lighting-slight-green-yellow-grading-clean-hygienic-organized-modern-machinery-based-production-only-and-render-them-in-an-optimized-responsive-gallery-layout",
+      "title": "Add a Visual Trust section that uses ONLY custom AI-generated photorealistic images (no stock photos) matching the specified style requirements (warm natural lighting; slight green/yellow grading; clean, hygienic, organized; modern machinery-based production only) and render them in an optimized, responsive gallery layout.",
+      "reqIds": [
+        "REQ-6"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-a-call-to-action-section-prompting-whatsapp-ordering-with-the-provided-copy-and-a-large-whatsapp-button-the-whatsapp-link-must-be-configurable-e-g-phone-number-prefilled-message-without-requiring-backend-changes",
+      "title": "Add a Call-To-Action section prompting WhatsApp ordering with the provided copy and a large WhatsApp button; the WhatsApp link must be configurable (e.g., phone number + prefilled message) without requiring backend changes.",
+      "reqIds": [
+        "REQ-7"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-create-a-support-section-with-a-custom-designed-form-styled-to-match-the-website-fields-name-phone-number-message-requirement-on-submit-send-the-data-to-google-forms-google-sheets-via-configurable-google-form-endpoint-integration-no-visible-google-form-ui-and-show-the-confirmation-message-thank-you-our-team-will-contact-you-shortly",
+      "title": "Create a Support section with a custom-designed form styled to match the website (fields: Name, Phone Number, Message/Requirement). On submit, send the data to Google Forms/Google Sheets via configurable Google Form endpoint integration (no visible Google Form UI), and show the confirmation message: “Thank you! Our team will contact you shortly.”",
+      "reqIds": [
+        "REQ-8"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-implement-the-footer-with-magadh-flour-mill-email-magadhprimeatta-gmail-com-facebook-link-facebook-com-magadhflour-instagram-link-instagram-com-magadhprimeatta-a-whatsapp-contact-button-the-full-address-text-provided-an-embedded-google-map-for-musatpura-bodhgaya-near-hotel-imperial-and-links-to-privacy-policy-and-terms-of-use-footer-styling-must-use-a-dark-grey-base-as-specified",
+      "title": "Implement the Footer with: “MAGADH FLOUR MILL”, email (magadhprimeatta@gmail.com), Facebook link (facebook.com/magadhflour), Instagram link (instagram.com/magadhprimeatta), a WhatsApp contact button, the full address text provided, an embedded Google Map for Musatpura, Bodhgaya near Hotel Imperial, and links to Privacy Policy and Terms of Use. Footer styling must use a Dark Grey base as specified.",
+      "reqIds": [
+        "REQ-9"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-create-dedicated-privacy-policy-and-terms-of-use-pages-with-simple-ready-made-english-text-stating-customer-data-is-only-used-for-communication-and-support-ensure-these-pages-are-linked-from-the-footer",
+      "title": "Create dedicated Privacy Policy and Terms of Use pages with simple, ready-made English text stating customer data is only used for communication and support; ensure these pages are linked from the footer.",
+      "reqIds": [
+        "REQ-10"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-ensure-seo-friendly-structure-and-performance-semantic-headings-single-h1-per-page-appropriate-meta-title-description-optimized-webp-images-with-responsive-sizing-minimal-dependencies-and-target-load-time-under-3-seconds-on-typical-mobile-network-conditions",
+      "title": "Ensure SEO-friendly structure and performance: semantic headings (single H1 per page), appropriate meta title/description, optimized WebP images with responsive sizing, minimal dependencies, and target load time under 3 seconds on typical mobile network conditions.",
+      "reqIds": [
+        "REQ-11"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-apply-the-specified-color-theme-consistently-across-the-site-primary-natural-green-shades-secondary-light-yellow-gradient-accents-background-soft-light-violet-blend-footer-dark-grey-maintain-visual-harmony-across-all-sections",
+      "title": "Apply the specified color theme consistently across the site: Primary natural green shades; Secondary light yellow gradient accents; Background soft light violet blend; Footer dark grey; maintain visual harmony across all sections.",
+      "reqIds": [
+        "REQ-12"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-update-the-site-wide-whatsapp-contact-configuration-to-use-phone-number-919122667155-so-that-all-whatsapp-ctas-hero-section-whatsapp-cta-section-footer-whatsapp-button-open-a-chat-to-that-number",
+      "title": "Update the site-wide WhatsApp contact configuration to use phone number \"919122667155\" so that all WhatsApp CTAs (Hero section, WhatsApp CTA section, Footer WhatsApp button) open a chat to that number.",
+      "reqIds": [
+        "REQ-13"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-make-the-header-brand-text-logo-magadhprime-behave-like-a-home-button-when-clicked-on-the-homepage-smoothly-scroll-to-the-top-home-hero-section-when-clicked-from-other-pages-privacy-terms-navigate-to-the-homepage-and-then-smoothly-scroll-to-the-hero-section",
+      "title": "Make the header brand text/logo \"MagadhPrime\" behave like a Home button: when clicked on the homepage, smoothly scroll to the top/Home (hero) section; when clicked from other pages (Privacy/Terms), navigate to the homepage and then smoothly scroll to the hero section.",
+      "reqIds": [
+        "REQ-14"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-backend-enforced-rate-limiting-to-reduce-spam-fake-rapid-repeats-by-the-same-user-device-within-2-3-minutes-and-apply-it-to-whatsapp-cta-clicks-before-opening-whatsapp-and-to-support-form-submissions-before-sending-to-google-forms-because-the-internet-computer-canister-cannot-reliably-read-the-user-s-ip-address-implement-the-limit-using-a-stable-per-device-client-identifier-generated-and-stored-in-the-browser-and-or-the-caller-principal-when-available",
+      "title": "Add backend-enforced rate limiting to reduce spam/fake rapid repeats by the same user/device within ~2–3 minutes, and apply it to WhatsApp CTA clicks (before opening WhatsApp) and to Support form submissions (before sending to Google Forms). Because the Internet Computer canister cannot reliably read the user’s IP address, implement the limit using a stable per-device client identifier (generated and stored in the browser) and/or the caller Principal when available.",
+      "reqIds": [
+        "REQ-15"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-generate-the-missing-custom-photorealistic-webp-images-referenced-by-the-hero-section-and-visual-trust-section-using-the-exact-filenames-and-dimensions-already-used-in-the-code-and-add-them-as-static-assets-under-frontend-public-assets-generated",
+      "title": "Generate the missing custom, photorealistic WebP images referenced by the Hero section and Visual Trust section, using the exact filenames and dimensions already used in the code, and add them as static assets under frontend/public/assets/generated.",
+      "reqIds": [
+        "REQ-16"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-fix-the-live-site-visibility-issue-for-the-hero-and-visual-trust-images-by-ensuring-the-website-successfully-serves-and-renders-the-referenced-static-asset-paths-e-g-assets-generated-webp-and-add-a-graceful-fallback-ui-if-an-image-fails-to-load",
+      "title": "Fix the live-site visibility issue for the Hero and Visual Trust images by ensuring the website successfully serves and renders the referenced static asset paths (e.g., /assets/generated/*.webp), and add a graceful fallback UI if an image fails to load.",
+      "reqIds": [
+        "REQ-17"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-place-the-processed-hero-image-asset-in-the-static-assets-folder-so-it-is-served-at-assets-generated-hero-wheat-field-dim-1920x1080-webp-and-loads-via-the-existing-imagewithfallback-path",
+      "title": "Place the processed Hero image asset in the static assets folder so it is served at /assets/generated/hero-wheat-field.dim_1920x1080.webp and loads via the existing ImageWithFallback path.",
+      "reqIds": [
+        "REQ-19"
+      ],
+      "version": 1
+    }
+  ],
+  "new_feature_requests": [
+    {
+      "id": "AR-1",
+      "summary": "Design and build the MagadhPrime mobile-first website (Home/About/Support) with premium natural aesthetic, smooth scrolling, minimal animations, and fast loading",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-2",
+      "summary": "Implement homepage hero section with wheat field image, brand text overlay, trust line, and prominent 'Order on WhatsApp' CTA button",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-3",
+      "summary": "Create About section copy and layout emphasizing advanced modern milling machinery, hygienic processing, and no chemicals/preservatives (avoid stone grinding/chakki mentions)",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-4",
+      "summary": "Create Benefits section with modern icon cards for: Organic Wheat Selection, Added Bran (Chokar), No Chemicals/Preservatives, Premium Quality & Hygiene",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-5",
+      "summary": "Add Visual Trust section using custom AI-generated photorealistic images (no stock photos) aligned to brand color grading and modern machinery-based production",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-6",
+      "summary": "Add CTA section encouraging WhatsApp ordering with a large WhatsApp button",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-7",
+      "summary": "Build Support section with custom-styled form (Name, Phone, Message) integrated to Google Forms/Google Sheets backend and confirmation message",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-8",
+      "summary": "Implement sticky mobile navigation with hamburger menu: Home | About | Support",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-9",
+      "summary": "Create footer with contact info, social links, WhatsApp button, embedded Google Map (Musatpura, Bodhgaya near Hotel Imperial), address, and Privacy/Terms links",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-10",
+      "summary": "Provide simple ready-made Privacy Policy and Terms of Use pages focused on customer data usage for communication/support",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-11",
+      "summary": "Ensure technical requirements: SEO-friendly structure, lightweight codebase, no unnecessary libraries, WebP images, fully responsive, load time under 3 seconds",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-12",
+      "summary": "Update WhatsApp CTA/contact link to use phone number 919122667155 for redirect to WhatsApp",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-13",
+      "summary": "Add abuse protection/rate limiting to prevent repeated fake submissions from the same IP within ~2–3 minutes (WhatsApp/support actions)",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-14",
+      "summary": "Make the header logo “MagadhPrime” clickable to scroll to the top/Home section (like a Home button)",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-15",
+      "summary": "Generate and integrate the missing Hero and Visual Trust section images (custom AI-generated, photorealistic; no stock) and ensure they render correctly on the live website",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-16",
+      "summary": "Update the homepage Hero background image to use the user-uploaded wheat-field image while keeping the rest of the website design, layout, copy, and behavior unchanged.",
+      "reqIds": [
+        "REQ-18"
+      ],
+      "status": "pending"
+    }
+  ],
+  "gameProjectType": "none",
+  "projectName": "MagadhPrime",
+  "clarification_mode": "instant",
+  "clarification_rounds": 0
+}

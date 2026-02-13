@@ -1,0 +1,39 @@
+{
+  "kind": "implementation_plan",
+  "version": "1.0",
+  "title": "Replace homepage Hero background with provided wheat-field image (no other site changes)",
+  "requirements": [
+    {
+      "id": "REQ-18",
+      "summary": "Ensure the homepage Hero uses the uploaded wheat-field image while keeping all other site design/layout/copy/behavior unchanged.",
+      "acceptanceCriteria": [
+        "The Hero section continues to reference the generated asset filename hero-wheat-field.dim_1920x1080.webp.",
+        "The Hero background visually matches the uploaded wheat-field image (same scene/composition) and renders correctly on the live site.",
+        "No other sections (Navbar, About, Benefits, Visual Trust, WhatsApp CTA, Support, Footer, Privacy/Terms) have any design/copy/behavior changes."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/sections/HeroSection.tsx",
+          "operation": "modify",
+          "description": "Keep the existing Hero background image reference to hero-wheat-field.dim_1920x1080.webp via getGeneratedAssetUrl and ImageWithFallback; limit changes to non-behavioral edits only (e.g., comment/clarification) to ensure the rest of the site remains unchanged."
+        }
+      ]
+    },
+    {
+      "id": "REQ-19",
+      "summary": "Add the processed Hero WebP to static generated assets so it serves at /assets/generated/hero-wheat-field.dim_1920x1080.webp and loads via the existing ImageWithFallback path.",
+      "acceptanceCriteria": [
+        "A WebP file named hero-wheat-field.dim_1920x1080.webp exists under frontend/public/assets/generated/.",
+        "Loading the homepage successfully displays the Hero image (no fallback placeholder) in both local dev and production builds.",
+        "The image uses the correct dimensions (1920x1080) and is optimized as WebP."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/public/assets/generated/hero-wheat-field.dim_1920x1080.webp",
+          "operation": "create",
+          "description": "Add (or replace, if already present) the processed WebP export of the uploaded wheat-field image at 1920x1080 under the generated assets directory so HeroSection loads it from /assets/generated/hero-wheat-field.dim_1920x1080.webp."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,69 @@
+{
+  "kind": "build_request",
+  "title": "Replace Hero background with uploaded image (keep site unchanged)",
+  "priority": "normal",
+  "requirements": [
+    {
+      "id": "REQ-18",
+      "text": "Update the homepage Hero background image to use the user-uploaded wheat-field image while keeping the rest of the website design, layout, copy, and behavior unchanged.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-1"
+        ],
+        "quotes": [
+          "Placed the image in hero image. Make same website. All are perfect"
+        ]
+      },
+      "acceptanceCriteria": [
+        "The Hero section continues to reference the generated asset filename hero-wheat-field.dim_1920x1080.webp.",
+        "The Hero background visually matches the uploaded wheat-field image (same scene/composition) and renders correctly on the live site.",
+        "No other sections (Navbar, About, Benefits, Visual Trust, WhatsApp CTA, Support, Footer, Privacy/Terms) have any design/copy/behavior changes."
+      ]
+    },
+    {
+      "id": "REQ-19",
+      "text": "Place the processed Hero image asset in the static assets folder so it is served at /assets/generated/hero-wheat-field.dim_1920x1080.webp and loads via the existing ImageWithFallback path.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-1"
+        ],
+        "quotes": [
+          "Placed the image in hero image. Make same website. All are perfect"
+        ]
+      },
+      "acceptanceCriteria": [
+        "A WebP file named hero-wheat-field.dim_1920x1080.webp exists under frontend/public/assets/generated/.",
+        "Loading the homepage successfully displays the Hero image (no fallback placeholder) in both local dev and production builds.",
+        "The image uses the correct dimensions (1920x1080) and is optimized as WebP."
+      ]
+    }
+  ],
+  "constraints": [
+    "Do not change any user-facing text; keep English copy exactly as currently implemented.",
+    "Do not modify any files under frontend/src/components/ui or other immutablePaths listed in SYSTEM_CONTEXT.",
+    "Keep existing filenames referenced in code (do not rename hero-wheat-field.dim_1920x1080.webp)."
+  ],
+  "nonGoals": [
+    "Redesigning the website theme, colors, typography, layout, or animations.",
+    "Changing WhatsApp rate limiting, Google Forms integration, or any backend logic.",
+    "Changing Visual Trust images or any other existing generated assets."
+  ],
+  "imageRequirements": {
+    "required": [],
+    "edits": [
+      "Use the uploaded wheat-field image as the Hero background and export as WebP at 1920x1080 (IMG_20260214_021314.png > hero-wheat-field.dim_1920x1080.webp)"
+    ]
+  },
+  "userProfileUpdate": {
+    "goalsToAdd": [],
+    "goalsToRemove": [],
+    "preferencesToAdd": [],
+    "preferencesToRemove": [],
+    "miscToAdd": [],
+    "miscToRemove": [],
+    "fieldsToSet": {},
+    "fieldsToDelete": []
+  }
+}

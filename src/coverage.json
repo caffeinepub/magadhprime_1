@@ -1,0 +1,45 @@
+{
+  "kind": "coverage_report",
+  "version": "1.0",
+  "generatedAt": "2026-02-13T20:47:31.274Z",
+  "sources": {
+    "buildRequest": true,
+    "implementationPlan": true
+  },
+  "requirements": {
+    "total": 2,
+    "implemented": 1,
+    "items": [
+      {
+        "id": "REQ-18",
+        "summary": "Update the homepage Hero background image to use the user-uploaded wheat-field image while keeping the rest of the website design, layout, copy, and behavior unchanged.",
+        "status": "missing",
+        "plannedFiles": [
+          "frontend/src/components/sections/HeroSection.tsx"
+        ],
+        "matchedFiles": []
+      },
+      {
+        "id": "REQ-19",
+        "summary": "Place the processed Hero image asset in the static assets folder so it is served at /assets/generated/hero-wheat-field.dim_1920x1080.webp and loads via the existing ImageWithFallback path.",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/public/assets/generated/hero-wheat-field.dim_1920x1080.webp"
+        ],
+        "matchedFiles": [
+          "frontend/public/assets/generated/hero-wheat-field.dim_1920x1080.webp"
+        ]
+      }
+    ]
+  },
+  "changedFiles": [
+    "build-request.json",
+    "feature_evidence.json",
+    "frontend-implementation-plan.json",
+    "frontend/public/assets/generated/hero-wheat-field.dim_1920x1080.webp",
+    "project_state.json",
+    "scratch/component-selection.json",
+    "spec.md",
+    "spec_vs_diff_report.json"
+  ]
+}
