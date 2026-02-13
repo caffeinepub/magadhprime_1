@@ -1,22 +1,24 @@
 {
   "kind": "implementation_plan",
   "version": "1.0",
-  "title": "Visual Trust: switch first grid image to external URL",
+  "title": "Update Visual Trust image URLs (positions 2, 3, 4, and 6)",
   "requirements": [
     {
-      "id": "REQ-25",
-      "summary": "Update Visual Trust section so the first grid image uses the provided external URL while keeping all other images, layout, and ImageWithFallback behavior unchanged.",
+      "id": "REQ-29",
+      "summary": "Update Visual Trust grid image sources for items #2, #3, #4, and #6 to use the provided external URLs while keeping layout, captions, and ImageWithFallback behavior unchanged.",
       "acceptanceCriteria": [
-        "In frontend/src/components/sections/VisualTrustSection.tsx, the first Visual Trust image renders using src=\"https://i.postimg.cc/DfNT4zDB/IMG-20260214-041839.png\" (not passed through getGeneratedAssetUrl).",
-        "All other Visual Trust images continue to load from their existing generated asset filenames via getGeneratedAssetUrl.",
-        "The Visual Trust grid layout, aspect ratio, hover effects, and ImageWithFallback loading/fallback UI remain unchanged.",
-        "The change does not affect the Hero section image behavior or any other site images."
+        "Visual Trust image #2 uses `https://i.postimg.cc/K81SGhQW/1771014909125.jpg`.",
+        "Visual Trust image #3 uses `https://i.postimg.cc/tTt8SqCX/IMG-20260214-021154.jpg`.",
+        "Visual Trust image #4 uses `https://i.postimg.cc/XYfKyp2n/IMG-20260214-021212.jpg`.",
+        "Visual Trust image #6 uses `https://i.postimg.cc/kMHyrr6n/IMG-20260214-043956.jpg` (as an external URL, consistent with the other external images).",
+        "Visual Trust image #5 remains unchanged from its current configuration.",
+        "Remove or update the existing TODO comment about the missing 6th image URL so it no longer claims the 6th URL is missing."
       ],
       "file_operations": [
         {
           "path": "frontend/src/components/sections/VisualTrustSection.tsx",
           "operation": "modify",
-          "description": "Adjust the Visual Trust images list/rendering so the first item uses the external URL \"https://i.postimg.cc/DfNT4zDB/IMG-20260214-041839.png\" directly (bypassing getGeneratedAssetUrl), while all remaining items continue to use their current generated asset filenames via getGeneratedAssetUrl; preserve existing markup, styling classes, aspect ratio container, hover effects, and ImageWithFallback props/behavior."
+          "description": "In the `images` array, replace the `src` values for the 2nd, 3rd, and 4th items with the user-provided URLs; update the 6th item to use the provided external URL (switch from generated-asset `filename` to `src` + `isExternal: true`) while keeping the existing captions, layout structure, and `ImageWithFallback` usage intact; remove/update the TODO comment indicating the 6th URL is missing; ensure the 5th item remains unchanged."
         }
       ]
     }

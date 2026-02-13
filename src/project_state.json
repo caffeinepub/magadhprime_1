@@ -1,6 +1,6 @@
 {
   "schemaVersion": "1.0.0",
-  "projectStateVersion": 21,
+  "projectStateVersion": 25,
   "summary": "Build a modern, professional, mobile-first marketing website for the MagadhPrime wheat flour brand (powered by MAGADH FLOUR MILL) with premium natural styling, fast performance, SEO-friendly structure, WhatsApp ordering CTA, custom support form integrated with Google Forms/Sheets, policy pages, and a visual trust section using AI-generated photorealistic images (no stock photos).",
   "architectural_notes": [
     "Mobile-first responsive layout; prioritize performance and fast loading (target <3s).",
@@ -10,7 +10,9 @@
     "Color theme: natural greens primary, light yellow gradient secondary, soft light violet background blend, dark grey footer.",
     "Implement basic abuse protection (e.g., IP-based rate limiting/cooldown ~2–3 minutes) for user-triggered contact/WhatsApp/support actions.",
     "Hero background image source may be an external URL; ensure it loads reliably in production (HTTPS, CORS-safe) and has a fallback if the remote asset is unavailable.",
-    "If Visual Trust images are loaded via external URLs, ensure they load reliably in production (HTTPS, CORS-safe) and provide a fallback if the remote asset is unavailable."
+    "If Visual Trust images are loaded via external URLs, ensure they load reliably in production (HTTPS, CORS-safe) and provide a fallback if the remote asset is unavailable.",
+    "Visual Trust gallery must support per-image captions displayed below each image; captions should explain modern/advanced hygienic processing and must not mention stone grinding/chakki.",
+    "Visual Trust external URL mapping provided by user: #2=https://i.postimg.cc/K81SGhQW/1771014909125.jpg, #3=https://i.postimg.cc/tTt8SqCX/IMG-20260214-021154.jpg, #4=https://i.postimg.cc/XYfKyp2n/IMG-20260214-021212.jpg, #6=https://i.postimg.cc/kMHyrr6n/IMG-20260214-043956.jpg (image #5 external URL still not provided)."
   ],
   "known_issues": [
     "Hero background image is not visible on the live site; appears stuck loading (likely static asset path/serving or missing/cached asset)."
@@ -200,6 +202,38 @@
         "REQ-25"
       ],
       "version": 1
+    },
+    {
+      "id": "feature-update-frontend-src-components-sections-visualtrustsection-tsx-so-that-visual-trust-images-2-5-2nd-3rd-4th-5th-items-in-the-grid-load-from-the-user-provided-external-urls-using-the-same-external-url-pattern-as-the-current-first-image-replacing-the-current-generated-asset-filenames-for-those-positions",
+      "title": "Update `frontend/src/components/sections/VisualTrustSection.tsx` so that Visual Trust images #2–#5 (2nd, 3rd, 4th, 5th items in the grid) load from the user-provided external URLs (using the same external-url pattern as the current first image), replacing the current generated-asset filenames for those positions.",
+      "reqIds": [
+        "REQ-26"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-handle-the-missing-6th-replacement-url-request-for-the-visual-trust-section-by-keeping-image-6-as-is-current-generated-asset-and-adding-a-clear-code-comment-todo-indicating-that-a-6th-external-url-is-still-required-to-replace-the-6th-image-when-provided-by-the-user",
+      "title": "Handle the missing 6th replacement URL request for the Visual Trust section by keeping image #6 as-is (current generated asset) and adding a clear code comment/TODO indicating that a 6th external URL is still required to replace the 6th image when provided by the user.",
+      "reqIds": [
+        "REQ-27"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-an-english-caption-below-every-visual-trust-image-all-6-items-that-explains-a-processing-quality-point-captions-must-align-with-the-site-s-positioning-modern-advanced-automated-milling-hygiene-quality-responsible-sourcing-and-must-not-mention-stone-grinding-or-chakki-processing",
+      "title": "Add an English caption below every Visual Trust image (all 6 items) that explains a processing/quality point. Captions must align with the site’s positioning (modern/advanced automated milling, hygiene, quality, responsible sourcing) and must not mention stone grinding or chakki processing.",
+      "reqIds": [
+        "REQ-28"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-update-frontend-src-components-sections-visualtrustsection-tsx-so-the-visual-trust-grid-loads-the-user-provided-external-image-urls-for-positions-2-3-4-and-6-2nd-3rd-4th-and-6th-items-in-the-images-array-replacing-the-currently-configured-urls-asset-for-those-positions-while-keeping-the-existing-layout-imagewithfallback-behavior-and-captions-intact",
+      "title": "Update `frontend/src/components/sections/VisualTrustSection.tsx` so the Visual Trust grid loads the user-provided external image URLs for positions #2, #3, #4, and #6 (2nd, 3rd, 4th, and 6th items in the `images` array), replacing the currently configured URLs/asset for those positions while keeping the existing layout, ImageWithFallback behavior, and captions intact.",
+      "reqIds": [
+        "REQ-29"
+      ],
+      "version": 1
     }
   ],
   "new_feature_requests": [
@@ -316,6 +350,24 @@
     {
       "id": "AR-21",
       "summary": "Replace the Visual Trust section’s first image to load from the external URL https://i.postimg.cc/DfNT4zDB/IMG-20260214-041839.png",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-22",
+      "summary": "Update Visual Trust section images #2–#6 to use user-provided external URLs (replace the current generated assets for those positions)",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-23",
+      "summary": "Add captions below each Visual Trust image describing the processing/quality point shown (aligned with the site’s copy rules: modern/advanced milling machinery; no stone grinding/chakki mentions)",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-24",
+      "summary": "Update Visual Trust image positions #2, #3, #4, and #6 to use the newly provided external URLs (leave other positions unchanged; image #5 URL still needed)",
       "reqIds": [],
       "status": "pending"
     }

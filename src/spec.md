@@ -1,10 +1,11 @@
 # Specification
 
 ## Summary
-**Goal:** Update the first image in the Visual Trust grid to load from a provided external URL while keeping the rest of the section unchanged.
+**Goal:** Update the Visual Trust grid to use the newly provided external image URLs for items #2, #3, #4, and #6.
 
 **Planned changes:**
-- In `frontend/src/components/sections/VisualTrustSection.tsx`, set the first Visual Trust image `src` to `https://i.postimg.cc/DfNT4zDB/IMG-20260214-041839.png` (not using `getGeneratedAssetUrl`).
-- Keep all other Visual Trust images, layout/styling, and `ImageWithFallback` behavior exactly as-is.
+- Update the `images` array in `frontend/src/components/sections/VisualTrustSection.tsx` so positions #2, #3, #4, and #6 point to the user-provided external URLs.
+- Keep the existing layout, captions, and `ImageWithFallback` behavior unchanged while swapping only the specified image sources.
+- Remove or revise the existing TODO comment so it no longer states the 6th image URL is missing.
 
-**User-visible outcome:** The first Visual Trust image displays from the external URL, with no visible changes to the grid layout or other images.
+**User-visible outcome:** The Visual Trust section displays the updated images in slots 2, 3, 4, and 6 while everything else remains visually and behaviorally the same.

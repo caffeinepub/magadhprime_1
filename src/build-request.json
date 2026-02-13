@@ -1,35 +1,39 @@
 {
   "kind": "build_request",
-  "title": "Update Visual Trust first image to use provided external URL",
+  "title": "Update Visual Trust image URLs for positions 2, 3, 4, and 6",
   "priority": "normal",
   "requirements": [
     {
-      "id": "REQ-25",
-      "text": "Update the Visual Trust section so that the first image in the grid loads from the external URL \"https://i.postimg.cc/DfNT4zDB/IMG-20260214-041839.png\" instead of the current generated asset filename, while keeping all other Visual Trust images unchanged and preserving the existing layout and ImageWithFallback behavior.",
+      "id": "REQ-29",
+      "text": "Update `frontend/src/components/sections/VisualTrustSection.tsx` so the Visual Trust grid loads the user-provided external image URLs for positions #2, #3, #4, and #6 (2nd, 3rd, 4th, and 6th items in the `images` array), replacing the currently configured URLs/asset for those positions while keeping the existing layout, ImageWithFallback behavior, and captions intact.",
       "target": "frontend",
       "source": {
         "messageIds": [
-          "msg-4"
+          "msg-1"
         ],
         "quotes": [
-          "Replace the url in visual trust section of first image.\n1. https://i.postimg.cc/DfNT4zDB/IMG-20260214-041839.png"
+          "2.https://i.postimg.cc/K81SGhQW/1771014909125.jpg\n3.https://i.postimg.cc/tTt8SqCX/IMG-20260214-021154.jpg\n4.https://i.postimg.cc/XYfKyp2n/IMG-20260214-021212.jpg\n6.https://i.postimg.cc/kMHyrr6n/IMG-20260214-043956.jpg\nReplace the given url with respective numbering of image position according to numbering from second,third,fourth, and sixth"
         ]
       },
       "acceptanceCriteria": [
-        "In frontend/src/components/sections/VisualTrustSection.tsx, the first Visual Trust image renders using src=\"https://i.postimg.cc/DfNT4zDB/IMG-20260214-041839.png\" (not passed through getGeneratedAssetUrl).",
-        "All other Visual Trust images continue to load from their existing generated asset filenames via getGeneratedAssetUrl.",
-        "The Visual Trust grid layout, aspect ratio, hover effects, and ImageWithFallback loading/fallback UI remain unchanged.",
-        "The change does not affect the Hero section image behavior or any other site images."
+        "Visual Trust image #2 uses `https://i.postimg.cc/K81SGhQW/1771014909125.jpg`.",
+        "Visual Trust image #3 uses `https://i.postimg.cc/tTt8SqCX/IMG-20260214-021154.jpg`.",
+        "Visual Trust image #4 uses `https://i.postimg.cc/XYfKyp2n/IMG-20260214-021212.jpg`.",
+        "Visual Trust image #6 uses `https://i.postimg.cc/kMHyrr6n/IMG-20260214-043956.jpg` (as an external URL, consistent with the other external images).",
+        "Visual Trust image #5 remains unchanged from its current configuration.",
+        "Remove or update the existing TODO comment about the missing 6th image URL so it no longer claims the 6th URL is missing."
       ]
     }
   ],
   "constraints": [
-    "Frontend immutable paths must not be edited (including frontend/src/hooks/useInternetIdentity.ts, frontend/src/hooks/useActor.ts, frontend/src/main.tsx, and frontend/src/components/ui).",
-    "Keep the existing Visual Trust section styling and structure; only change the first image source URL as requested."
+    "Do not edit any files under the frontend immutable paths listed in SYSTEM_CONTEXT.",
+    "Keep the existing Visual Trust section layout, captions, and `ImageWithFallback` usage unchanged aside from updating the specified image sources.",
+    "Use English for any user-facing text."
   ],
   "nonGoals": [
-    "Do not regenerate or modify any existing generated WebP assets for the Visual Trust section.",
-    "Do not change any other Visual Trust image URLs/filenames or alt text beyond what is required to update the first image source."
+    "Do not redesign the Visual Trust section UI.",
+    "Do not change Visual Trust captions unless required for the URL update.",
+    "Do not add new images or regenerate static assets for this change."
   ],
   "imageRequirements": {
     "required": [],

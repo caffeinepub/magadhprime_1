@@ -2,8 +2,8 @@
   "kind": "feature_evidence_report",
   "features": [
     {
-      "featureId": "feature-update-the-visual-trust-section-so-that-the-first-image-in-the-grid-loads-from-the-external-url-https-i-postimg-cc-dfnt4zdb-img-20260214-041839-png-instead-of-the-current-generated-asset-filename-while-keeping-all-other-visual-trust-images-unchanged-and-preserving-the-existing-layout-and-imagewithfallback-behavior",
-      "featureTitle": "Update the Visual Trust section so that the first image in the grid loads from the external URL \"https://i.postimg.cc/DfNT4zDB/IMG-20260214-041839.png\" instead of the current generated asset filename, while keeping all other Visual Trust images unchanged and preserving the existing layout and ImageWithFallback behavior.",
+      "featureId": "feature-update-frontend-src-components-sections-visualtrustsection-tsx-so-the-visual-trust-grid-loads-the-user-provided-external-image-urls-for-positions-2-3-4-and-6-2nd-3rd-4th-and-6th-items-in-the-images-array-replacing-the-currently-configured-urls-asset-for-those-positions-while-keeping-the-existing-layout-imagewithfallback-behavior-and-captions-intact",
+      "featureTitle": "Update `frontend/src/components/sections/VisualTrustSection.tsx` so the Visual Trust grid loads the user-provided external image URLs for positions #2, #3, #4, and #6 (2nd, 3rd, 4th, and 6th items in the `images` array), replacing the currently configured URLs/asset for those positions while keeping the existing layout, ImageWithFallback behavior, and captions intact.",
       "files": [
         "frontend/src/components/sections/VisualTrustSection.tsx"
       ],
@@ -15,7 +15,7 @@
         "github-export-icp-cli@1.0.0"
       ],
       "testIds": [
-        "REQ-25"
+        "REQ-29"
       ],
       "confidence": "high"
     }
